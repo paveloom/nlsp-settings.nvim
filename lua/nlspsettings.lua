@@ -232,7 +232,7 @@ local make_on_new_config = function(on_new_config)
     -- 1度だけ、保持する ()
     -- new_config.settings は `setup({settings = ...}) + default_config.settings`
     servers[server_name].conf_settings = vim.deepcopy(new_config.settings)
-    new_config.settings = get_settings(root_dir, server_name)
+    new_config.settings = get_settings(vim.fn.getcwd(), server_name)
   end)
 end
 
